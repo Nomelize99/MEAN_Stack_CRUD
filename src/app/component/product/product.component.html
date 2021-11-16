@@ -1,0 +1,29 @@
+<div class="container mt-3">
+    <div class="d-flex justify-content between flex-wrap flex-md-nowarp align-items-center pt-2 pb-2 mb-3 border-bottom">
+        <h1>All Product</h1>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Detail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pro of product; let i = index ;">
+                    <th scope="row">{{pro._id}}</th>
+                    <td>{{pro.name}}</td>
+                    <td>{{pro.price}}</td>
+                    <td>{{pro.detail}}</td>
+                    <td class="text-center">
+                        <button class="btn btn-sm btn-primary" routerLink="/edit-product/{{pro._id}}">edit</button>
+                        <button class="btn btn-sm btn-danger" (click)="delete(pro._id, i)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
